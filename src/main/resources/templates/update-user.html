@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">Update User</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/update/{id}(id=${user.id})}" th:object="${user}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name" class="col-form-label">User Code</label>
+                        <input type="text" th:field="*{userCode}" class="form-control" id="name" placeholder="User Code">
+                        <span th:if="${#fields.hasErrors('userCode')}" th:errors="*{userCode}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label"><Na></Na>me</label>
+                        <input type="text" th:field="*{name}" class="form-control" id="email" placeholder="Name">
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Sur Name</label>
+                        <input type="text" th:field="*{surName}" class="form-control" id="surName" placeholder="Sur Name">
+                        <span th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Account Type</label>
+                        <input type="text" th:field="*{accountType}" class="form-control" id="accountType" placeholder="Account Type">
+                        <span th:if="${#fields.hasErrors('accountType')}" th:errors="*{accountType}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Account Code</label>
+                        <input type="text" th:field="*{accountCode}" class="form-control" id="accountCode" placeholder="Account Code">
+                        <span th:if="${#fields.hasErrors('accountCode')}" th:errors="*{accountCode}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Balance</label>
+                        <input type="text" th:field="*{balance}" class="form-control" id="balance" placeholder="Balance">
+                        <span th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Update User">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
